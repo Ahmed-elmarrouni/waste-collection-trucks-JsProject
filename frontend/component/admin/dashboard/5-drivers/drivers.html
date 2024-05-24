@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./drivers.css">
+        <!-- Montserrat Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <!-- Material Icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+            rel="stylesheet">
+
+        <title>Dashboard - Trucks</title>
+    </head>
+    <body>
+        <div class="grid-container">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-icons-outlined">recycling</span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </header>
+            <!-- End Header -->
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">recycling
+                        </span> EcoClean
+                    </div>
+                    <span class="material-icons-outlined"
+                        onclick="closeSidebar()">close</span>
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="../1-main/main.html">
+                            <span
+                                class="material-icons-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../2-trucks/trucks.html">
+                            <span
+                                class="material-icons-outlined">local_shipping</span>
+                            Trucks
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../3-baskets/baskets.html">
+                            <span class="material-icons-outlined">delete</span>
+                            baskets
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../4-assistants/assistant.html">
+                            <span class="material-icons-outlined">groups</span>
+                            Assistants
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../5-drivers/drivers.html">
+                            <span class="material-icons-outlined">person</span>
+                            Drivers
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+            <!-- Main -->
+            <main class="main-container">
+                <div class="main-title">
+                    <h2>Drivers</h2>
+                </div>
+                <div id="container">
+                    <div id="input-container">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter first name">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter first name">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter tel number">
+                        <input type="email" class="plate-input"
+                            placeholder="Enter email">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter adress">
+
+                        <button id="add-btn">Add</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Driver Id</th>
+                                <th>Full name</th>
+                                <th>Tel</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>1</td>
+                                <td>Laarbi</td>
+                                <td>0123456879</td>
+                                <td>tetoua</td>
+                                <td>laarbi@gmail.com</td>
+                                <td><button
+                                        class="updateBtn">Update</button></td>
+                                <td><button
+                                        class="deleteBtn">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

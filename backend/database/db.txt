@@ -1,0 +1,53 @@
+CREATE TABLE TRASH (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    X FLOAT NOT NULL,
+    Y FLOAT NOT NULL,
+    Capacity INT NOT NULL,
+    Last_Emptied DATETIME
+);
+
+CREATE TABLE TRUCK (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Num_Matricul VARCHAR(50) UNIQUE NOT NULL,
+    Current_Load INT DEFAULT 0,
+    Driver_Id INT,
+    Assistant_Id INT,
+    Location_X FLOAT,
+    Location_Y FLOAT,
+    FOREIGN KEY (Driver_Id) REFERENCES USERS(Id),
+    FOREIGN KEY (Assistant_Id) REFERENCES USERS(Id)
+);
+
+CREATE TABLE USERS (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    First_Name VARCHAR(50) NOT NULL,
+    Last_Name VARCHAR(50) NOT NULL,
+    Type ENUM('Driver', 'Driver Assistant') NOT NULL,
+    CIN VARCHAR(20) UNIQUE NOT NULL,
+    Address VARCHAR(255),
+    Age INT,
+    Tel VARCHAR(15),
+    Email VARCHAR(100) UNIQUE,
+    Password VARCHAR(255) NOT NULL,
+    Date_Joined DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE ROUTES (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Truck_Id INT,
+    Route_Name VARCHAR(100),
+    Start_Time DATETIME,
+    End_Time DATETIME,
+    FOREIGN KEY (Truck_Id) REFERENCES TRUCK(Id)
+);
+
+CREATE TABLE COLLECTION_LOG (
+    Id INT AUTO_INCREMENT PRIMARY KEY,
+    Trash_Id INT,
+    Truck_Id INT,
+    Collected_At DATETIME,
+    Amount_Collected INT,
+    FOREIGN KEY (Trash_Id) REFERENCES TRASH(Id),
+    FOREIGN KEY (Truck_Id) REFERENCES TRUCK(Id)
+);
+

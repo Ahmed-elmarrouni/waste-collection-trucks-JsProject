@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./baskets.css">
+        <!-- Montserrat Font -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+
+        <!-- Material Icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+            rel="stylesheet">
+
+        <title>Dashboard - Baskets</title>
+    </head>
+    <body>
+        <div class="grid-container">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+                <div class="header-left">
+                    <span class="material-icons-outlined">recycling</span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons-outlined">account_circle</span>
+                </div>
+            </header>
+            <!-- End Header -->
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">recycling
+                        </span> EcoClean
+                    </div>
+                    <span class="material-icons-outlined"
+                        onclick="closeSidebar()">close</span>
+                </div>
+
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="../1-main/main.html">
+                            <span
+                                class="material-icons-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../2-trucks/trucks.html">
+                            <span
+                                class="material-icons-outlined">local_shipping</span>
+                            Trucks
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../3-baskets/baskets.html">
+                            <span class="material-icons-outlined">delete</span>
+                            baskets
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../4-assistants/assistant.html">
+                            <span class="material-icons-outlined">groups</span>
+                            Assistants
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="../5-drivers/drivers.html">
+                            <span class="material-icons-outlined">person</span>
+                            Drivers
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+            <!-- Main -->
+            <main class="main-container">
+                <div class="main-title">
+                    <h2>Baskets</h2>
+                </div>
+                <div id="container">
+                    <div id="input-container">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter Address">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter Location X">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter Location Y">
+                        <input type="text" class="plate-input"
+                            placeholder="Enter Basket Capacity L">
+
+                        <button id="add-btn">Add</button>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Basket Id</th>
+                                <th>Adress</th>
+                                <th>Location</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>1</td>
+                                <td>Av Far</td>
+                                <td><button class="locationBtn">See
+                                        location</button></td>
+                                <td><button
+                                        class="updateBtn">Update</button></td>
+                                <td><button
+                                        class="deleteBtn">Delete</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
